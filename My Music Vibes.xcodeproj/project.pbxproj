@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83AE0C6F29B78D5A00CC4D19 /* My_Music_VibesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE0C6E29B78D5A00CC4D19 /* My_Music_VibesApp.swift */; };
+		83AE0C7129B78D5A00CC4D19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE0C7029B78D5A00CC4D19 /* ContentView.swift */; };
+		83AE0C7329B78D5B00CC4D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AE0C7229B78D5B00CC4D19 /* Assets.xcassets */; };
+		83AE0C7629B78D5B00CC4D19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AE0C7529B78D5B00CC4D19 /* Preview Assets.xcassets */; };
+		83AE0C8029B78D5B00CC4D19 /* My_Music_VibesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE0C7F29B78D5B00CC4D19 /* My_Music_VibesTests.swift */; };
+		83AE0C8A29B78D5B00CC4D19 /* My_Music_VibesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE0C8929B78D5B00CC4D19 /* My_Music_VibesUITests.swift */; };
+		83AE0C8C29B78D5B00CC4D19 /* My_Music_VibesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE0C8B29B78D5B00CC4D19 /* My_Music_VibesUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83AE0C7C29B78D5B00CC4D19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83AE0C6329B78D5900CC4D19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83AE0C6A29B78D5900CC4D19;
+			remoteInfo = "My Music Vibes";
+		};
+		83AE0C8629B78D5B00CC4D19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83AE0C6329B78D5900CC4D19 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83AE0C6A29B78D5900CC4D19;
+			remoteInfo = "My Music Vibes";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		83AE0C6B29B78D5A00CC4D19 /* My Music Vibes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Music Vibes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83AE0C6E29B78D5A00CC4D19 /* My_Music_VibesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Music_VibesApp.swift; sourceTree = "<group>"; };
+		83AE0C7029B78D5A00CC4D19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		83AE0C7229B78D5B00CC4D19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83AE0C7529B78D5B00CC4D19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		83AE0C7B29B78D5B00CC4D19 /* My Music VibesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Music VibesTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83AE0C7F29B78D5B00CC4D19 /* My_Music_VibesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Music_VibesTests.swift; sourceTree = "<group>"; };
+		83AE0C8529B78D5B00CC4D19 /* My Music VibesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Music VibesUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		83AE0C8929B78D5B00CC4D19 /* My_Music_VibesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Music_VibesUITests.swift; sourceTree = "<group>"; };
+		83AE0C8B29B78D5B00CC4D19 /* My_Music_VibesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Music_VibesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83AE0C6829B78D5900CC4D19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AE0C7829B78D5B00CC4D19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AE0C8229B78D5B00CC4D19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83AE0C6229B78D5900CC4D19 = {
+			isa = PBXGroup;
+			children = (
+				83AE0C6D29B78D5A00CC4D19 /* My Music Vibes */,
+				83AE0C7E29B78D5B00CC4D19 /* My Music VibesTests */,
+				83AE0C8829B78D5B00CC4D19 /* My Music VibesUITests */,
+				83AE0C6C29B78D5A00CC4D19 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83AE0C6C29B78D5A00CC4D19 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83AE0C6B29B78D5A00CC4D19 /* My Music Vibes.app */,
+				83AE0C7B29B78D5B00CC4D19 /* My Music VibesTests.xctest */,
+				83AE0C8529B78D5B00CC4D19 /* My Music VibesUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83AE0C6D29B78D5A00CC4D19 /* My Music Vibes */ = {
+			isa = PBXGroup;
+			children = (
+				83AE0C6E29B78D5A00CC4D19 /* My_Music_VibesApp.swift */,
+				83AE0C7029B78D5A00CC4D19 /* ContentView.swift */,
+				83AE0C7229B78D5B00CC4D19 /* Assets.xcassets */,
+				83AE0C7429B78D5B00CC4D19 /* Preview Content */,
+			);
+			path = "My Music Vibes";
+			sourceTree = "<group>";
+		};
+		83AE0C7429B78D5B00CC4D19 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				83AE0C7529B78D5B00CC4D19 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		83AE0C7E29B78D5B00CC4D19 /* My Music VibesTests */ = {
+			isa = PBXGroup;
+			children = (
+				83AE0C7F29B78D5B00CC4D19 /* My_Music_VibesTests.swift */,
+			);
+			path = "My Music VibesTests";
+			sourceTree = "<group>";
+		};
+		83AE0C8829B78D5B00CC4D19 /* My Music VibesUITests */ = {
+			isa = PBXGroup;
+			children = (
+				83AE0C8929B78D5B00CC4D19 /* My_Music_VibesUITests.swift */,
+				83AE0C8B29B78D5B00CC4D19 /* My_Music_VibesUITestsLaunchTests.swift */,
+			);
+			path = "My Music VibesUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83AE0C6A29B78D5900CC4D19 /* My Music Vibes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83AE0C8F29B78D5B00CC4D19 /* Build configuration list for PBXNativeTarget "My Music Vibes" */;
+			buildPhases = (
+				83AE0C6729B78D5900CC4D19 /* Sources */,
+				83AE0C6829B78D5900CC4D19 /* Frameworks */,
+				83AE0C6929B78D5900CC4D19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "My Music Vibes";
+			productName = "My Music Vibes";
+			productReference = 83AE0C6B29B78D5A00CC4D19 /* My Music Vibes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83AE0C7A29B78D5B00CC4D19 /* My Music VibesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83AE0C9229B78D5B00CC4D19 /* Build configuration list for PBXNativeTarget "My Music VibesTests" */;
+			buildPhases = (
+				83AE0C7729B78D5B00CC4D19 /* Sources */,
+				83AE0C7829B78D5B00CC4D19 /* Frameworks */,
+				83AE0C7929B78D5B00CC4D19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83AE0C7D29B78D5B00CC4D19 /* PBXTargetDependency */,
+			);
+			name = "My Music VibesTests";
+			productName = "My Music VibesTests";
+			productReference = 83AE0C7B29B78D5B00CC4D19 /* My Music VibesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		83AE0C8429B78D5B00CC4D19 /* My Music VibesUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83AE0C9529B78D5B00CC4D19 /* Build configuration list for PBXNativeTarget "My Music VibesUITests" */;
+			buildPhases = (
+				83AE0C8129B78D5B00CC4D19 /* Sources */,
+				83AE0C8229B78D5B00CC4D19 /* Frameworks */,
+				83AE0C8329B78D5B00CC4D19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83AE0C8729B78D5B00CC4D19 /* PBXTargetDependency */,
+			);
+			name = "My Music VibesUITests";
+			productName = "My Music VibesUITests";
+			productReference = 83AE0C8529B78D5B00CC4D19 /* My Music VibesUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83AE0C6329B78D5900CC4D19 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					83AE0C6A29B78D5900CC4D19 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					83AE0C7A29B78D5B00CC4D19 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 83AE0C6A29B78D5900CC4D19;
+					};
+					83AE0C8429B78D5B00CC4D19 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 83AE0C6A29B78D5900CC4D19;
+					};
+				};
+			};
+			buildConfigurationList = 83AE0C6629B78D5900CC4D19 /* Build configuration list for PBXProject "My Music Vibes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83AE0C6229B78D5900CC4D19;
+			productRefGroup = 83AE0C6C29B78D5A00CC4D19 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83AE0C6A29B78D5900CC4D19 /* My Music Vibes */,
+				83AE0C7A29B78D5B00CC4D19 /* My Music VibesTests */,
+				83AE0C8429B78D5B00CC4D19 /* My Music VibesUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83AE0C6929B78D5900CC4D19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AE0C7629B78D5B00CC4D19 /* Preview Assets.xcassets in Resources */,
+				83AE0C7329B78D5B00CC4D19 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AE0C7929B78D5B00CC4D19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AE0C8329B78D5B00CC4D19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83AE0C6729B78D5900CC4D19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AE0C7129B78D5A00CC4D19 /* ContentView.swift in Sources */,
+				83AE0C6F29B78D5A00CC4D19 /* My_Music_VibesApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AE0C7729B78D5B00CC4D19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AE0C8029B78D5B00CC4D19 /* My_Music_VibesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83AE0C8129B78D5B00CC4D19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83AE0C8C29B78D5B00CC4D19 /* My_Music_VibesUITestsLaunchTests.swift in Sources */,
+				83AE0C8A29B78D5B00CC4D19 /* My_Music_VibesUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83AE0C7D29B78D5B00CC4D19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83AE0C6A29B78D5900CC4D19 /* My Music Vibes */;
+			targetProxy = 83AE0C7C29B78D5B00CC4D19 /* PBXContainerItemProxy */;
+		};
+		83AE0C8729B78D5B00CC4D19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83AE0C6A29B78D5900CC4D19 /* My Music Vibes */;
+			targetProxy = 83AE0C8629B78D5B00CC4D19 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		83AE0C8D29B78D5B00CC4D19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83AE0C8E29B78D5B00CC4D19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83AE0C9029B78D5B00CC4D19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"My Music Vibes/Preview Content\"";
+				DEVELOPMENT_TEAM = 9AN46ZLAUD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jarred.My-Music-Vibes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		83AE0C9129B78D5B00CC4D19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"My Music Vibes/Preview Content\"";
+				DEVELOPMENT_TEAM = 9AN46ZLAUD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jarred.My-Music-Vibes";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		83AE0C9329B78D5B00CC4D19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AN46ZLAUD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jarred.My-Music-VibesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Music Vibes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/My Music Vibes";
+			};
+			name = Debug;
+		};
+		83AE0C9429B78D5B00CC4D19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AN46ZLAUD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jarred.My-Music-VibesTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/My Music Vibes.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/My Music Vibes";
+			};
+			name = Release;
+		};
+		83AE0C9629B78D5B00CC4D19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AN46ZLAUD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jarred.My-Music-VibesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "My Music Vibes";
+			};
+			name = Debug;
+		};
+		83AE0C9729B78D5B00CC4D19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9AN46ZLAUD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jarred.My-Music-VibesUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "My Music Vibes";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83AE0C6629B78D5900CC4D19 /* Build configuration list for PBXProject "My Music Vibes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AE0C8D29B78D5B00CC4D19 /* Debug */,
+				83AE0C8E29B78D5B00CC4D19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83AE0C8F29B78D5B00CC4D19 /* Build configuration list for PBXNativeTarget "My Music Vibes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AE0C9029B78D5B00CC4D19 /* Debug */,
+				83AE0C9129B78D5B00CC4D19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83AE0C9229B78D5B00CC4D19 /* Build configuration list for PBXNativeTarget "My Music VibesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AE0C9329B78D5B00CC4D19 /* Debug */,
+				83AE0C9429B78D5B00CC4D19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83AE0C9529B78D5B00CC4D19 /* Build configuration list for PBXNativeTarget "My Music VibesUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83AE0C9629B78D5B00CC4D19 /* Debug */,
+				83AE0C9729B78D5B00CC4D19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83AE0C6329B78D5900CC4D19 /* Project object */;
+}
