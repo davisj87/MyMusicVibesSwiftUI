@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum HomeSectionViewModelScope:String {
-    case artist = "Artist"
-    case track = "Track"
-    case playlist = "Playlist"
-}
+//enum HomeSectionViewModelScope:String {
+//    case artist = "Artist"
+//    case track = "Track"
+//    case playlist = "Playlist"
+//}
 
 
 struct HomeArtistSectionViewModel {
