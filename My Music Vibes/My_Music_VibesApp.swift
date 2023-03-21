@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct My_Music_VibesApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let service = KeychainHelper.tokenSeviceStr
+            if KeychainHelper.standard.read(service: service, type: TokenStorageObject.self) != nil {
+                CoreTabBarView()
+            } else {
+                WelcomeView()
+            }
         }
     }
 }
+
+//        KeychainHelper.standard.delete(service: service)
+//        KeychainHelper.standard.delete(service: KeychainHelper.refreshSeviceStr)
