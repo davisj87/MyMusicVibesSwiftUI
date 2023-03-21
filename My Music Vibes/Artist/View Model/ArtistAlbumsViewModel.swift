@@ -7,21 +7,21 @@
 
 import Foundation
 
+
 @MainActor final class ArtistAlbumsViewModel: ObservableObject  {
     private var isPaginating:Bool = false
-   // private var albums:[AlbumObject] = []
+    private var albums:[AlbumObject] = []
     private (set) var albumTotal:Int = 0
     
-    @Published private (set) var albumOverviewCellViewModels:[AlbumOverviewCellViewModel] = []
-//
-//    var albumCount:Int {
-//        return albums.count
-//    }
+    @Published var state: ViewModelState = .loading
+
+    var albumRange:Range<Int>  {
+        return albums.indices
+    }
     
-//    func getAlbumVM(at index:Int) -> AlbumOverviewCellViewModel {
-//        let album = albums[index]
-//        return AlbumCellViewModel(albumObject: album)
-//    }
+    func getAlbumVM(at index:Int) -> AlbumOverviewCellViewModel {
+        return AlbumOverviewCellViewModel(albumObject: albums[index])
+    }
     
     let artist:ArtistOverviewCellViewModel
     private let artistAlbumsFetcher:ArtistAlbumsFetcherProtocol
@@ -32,21 +32,31 @@ import Foundation
     }
     
     func getAlbumData() async throws {
-        let albumData = try await self.artistAlbumsFetcher.getAlbumsFromArtist(artistId: self.artist.id)
-        self.albumTotal = albumData.total
-        self.albumOverviewCellViewModels = albumData.items.map{ AlbumOverviewCellViewModel(albumObject: $0) }
-       // self.albums = albumData.items
+        self.albums = []
+        do {
+            let albumData = try await self.artistAlbumsFetcher.getAlbumsFromArtist(artistId: self.artist.id)
+            self.albumTotal = albumData.total
+            self.albums = albumData.items
+            
+            if albums.isEmpty {
+                state = .empty("This artist has no albums.")
+            } else {
+                state = .loaded
+            }
+            
+        } catch {
+            state = .error("There was an error loading your data")
+        }
     }
     
     func getMoreAlbumData() async throws {
         defer { self.isPaginating = false }
-        guard self.albumTotal > self.albumOverviewCellViewModels.count else { return }
+        guard self.albumTotal > self.albums.count else { return }
         if !isPaginating {
             self.isPaginating = true
-            let moreAlbumData = try await self.artistAlbumsFetcher.getMoreAlbumsFromArtist(artistId: self.artist.id, offset: self.albumOverviewCellViewModels.count)
+            let moreAlbumData = try await self.artistAlbumsFetcher.getMoreAlbumsFromArtist(artistId: self.artist.id, offset: self.albums.count)
             guard !moreAlbumData.isEmpty else { return }
-            let moreAlbumOverviewCells = moreAlbumData.map{ AlbumOverviewCellViewModel(albumObject: $0) }
-            self.albumOverviewCellViewModels.append(contentsOf: moreAlbumOverviewCells)
+            self.albums.append(contentsOf: moreAlbumData)
         }
     }
 }

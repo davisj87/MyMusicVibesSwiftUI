@@ -52,10 +52,10 @@ struct HomeView: View {
         }
         .navigationTitle("Home")
         .navigationDestination(for: ArtistOverviewCellViewModel.self, destination: { artistCellViewModel in
-            ArtistView(vm: ArtistAlbumsViewModel(artist: artistCellViewModel))
+            ArtistLoadingView(vm: ArtistAlbumsViewModel(artist: artistCellViewModel))
         })
         .navigationDestination(for: TrackOverviewCellViewModel.self, destination: { trackCellViewModel in
-            TrackView()
+           // TrackView()
         })
         .navigationDestination(for: PlaylistOverviewCellViewModel.self, destination: { playlistCellViewModel in
             PlaylistView()

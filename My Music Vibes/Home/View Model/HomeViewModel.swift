@@ -9,13 +9,6 @@ import Foundation
 
 @MainActor final class HomeViewModel: ObservableObject {
     
-    enum State {
-        case loading
-        case loaded
-        case empty(String)
-        case error(String)
-    }
-    
     private var tracks:[TracksObject] = []
     private var artists:[ArtistObject] = []
     private var playlists:[PlaylistObject] = []
@@ -34,7 +27,7 @@ import Foundation
     
     private let authManager = AuthManager()
     
-    @Published var state: State = .loading
+    @Published var state: ViewModelState = .loading
     
     let homeFetcher: HomeFetcherProtocol
     
