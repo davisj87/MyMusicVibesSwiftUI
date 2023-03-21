@@ -11,9 +11,25 @@ import Foundation
     
     enum State {
         case loading
-        case loaded(tracks:[TrackOverviewCellViewModel],artists:[ArtistOverviewCellViewModel], playlists: [PlaylistOverviewCellViewModel])
+        case loaded
         case empty(String)
         case error(String)
+    }
+    
+    private var tracks:[TracksObject] = []
+    private var artists:[ArtistObject] = []
+    private var playlists:[PlaylistObject] = []
+    
+    var trackCount:Int {
+        return tracks.count
+    }
+    
+    var artistCount:Int {
+        return artists.count
+    }
+    
+    var playlistCount:Int {
+        return playlists.count
     }
     
     private let authManager = AuthManager()
@@ -27,28 +43,45 @@ import Foundation
     }
     
     func loadTopItems() async throws {
+        self.reset()
         async let tracks = self.homeFetcher.getTopTracks()
         async let artists = self.homeFetcher.getTopArtists()
         async let playlists = self.homeFetcher.getTopPlaylists()
         
         do {
-            let sections = try await self.mapSections(tracks: tracks, artists: artists, playlist: playlists)
-            if sections.tracksCellVM.isEmpty && sections.artistCellVM.isEmpty && sections.playlistCellVM.isEmpty {
+            try await self.setSections(tracks: tracks, artists: artists, playlists: playlists)
+            if self.tracks.isEmpty && self.artists.isEmpty && self.playlists.isEmpty {
                 state = .empty("You currently have no favorites")
             } else {
-                state = .loaded(tracks: sections.tracksCellVM, artists: sections.artistCellVM, playlists: sections.playlistCellVM)
+                state = .loaded
             }
         } catch {
             state = .error("There was an error loading your data")
         }
     }
     
-    private func mapSections(tracks:[TracksObject], artists:[ArtistObject], playlist: [PlaylistObject]) -> (tracksCellVM:[TrackOverviewCellViewModel], artistCellVM:[ArtistOverviewCellViewModel], playlistCellVM:[PlaylistOverviewCellViewModel]) {
-        let tracksViewModel = tracks.map{ TrackOverviewCellViewModel(tracksObject: $0) }
-        let artistViewModel = artists.map{ ArtistOverviewCellViewModel(artistsObject: $0) }
-        let playlistViewModel = playlist.map{ PlaylistOverviewCellViewModel(playlistObject: $0) }
+    func getPlaylistCellViewModel(at index:Int) -> PlaylistOverviewCellViewModel {
+        return PlaylistOverviewCellViewModel(playlistObject: playlists[index])
+    }
     
-        return (tracksCellVM:tracksViewModel, artistCellVM:artistViewModel, playlistCellVM:playlistViewModel)
+    func getArtistCellViewModel(at index:Int) -> ArtistOverviewCellViewModel {
+        return ArtistOverviewCellViewModel(artistsObject: artists[index])
+    }
+    
+    func getTrackCellViewModel(at index:Int) -> TrackOverviewCellViewModel {
+        return TrackOverviewCellViewModel(tracksObject: tracks[index])
+    }
+    
+    private func setSections(tracks:[TracksObject], artists:[ArtistObject], playlists: [PlaylistObject]) {
+        self.tracks = tracks
+        self.artists = artists
+        self.playlists = playlists
+    }
+    
+    private func reset() {
+        self.playlists = []
+        self.tracks = []
+        self.artists = []
     }
 }
 

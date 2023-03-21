@@ -14,8 +14,8 @@ struct HomeLoadingView: View {
     var body: some View {
         NavigationStack {
             switch vm.state {
-            case let .loaded(tracks: tracks, artists: artists, playlists: playlists):
-                HomeView(tracks: tracks, artists: artists, playlists: playlists)
+            case .loaded:
+                HomeView(vm:vm)
             case let .empty(message):
                 ErrorView(message: message, color: .gray)
             case let .error( message):

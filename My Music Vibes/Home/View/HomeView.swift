@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    let tracks: [TrackOverviewCellViewModel]
-    let artists: [ArtistOverviewCellViewModel]
-    let playlists: [PlaylistOverviewCellViewModel]
+    let vm:HomeViewModel
     
     var body: some View {
         List() {
             Section() {
-                ForEach(artists, id: \.id) { row in
-                    NavigationLink(value: row) {
-                        HomeArtistCellView(artistCellViewModel: row)
+                ForEach(0..<vm.artistCount, id: \.self) { row in
+                    let cellViewModel = vm.getArtistCellViewModel(at: row)
+                    NavigationLink(value: cellViewModel) {
+                        HomeArtistCellView(artistCellViewModel: cellViewModel)
                     }
                 }
                 .listRowBackground(ShadowCellView())
@@ -26,9 +25,10 @@ struct HomeView: View {
                 Text("Artists")
             }
             Section() {
-                ForEach(tracks, id: \.id) { row in
-                    NavigationLink(value: row) {
-                        HomeTrackCellView(trackCellViewModel: row)
+                ForEach(0..<vm.trackCount, id: \.self) { row in
+                    let cellViewModel = vm.getTrackCellViewModel(at: row)
+                    NavigationLink(value: cellViewModel) {
+                        HomeTrackCellView(trackCellViewModel: cellViewModel)
                     }
                 }
                 .listRowBackground(ShadowCellView())
@@ -37,9 +37,10 @@ struct HomeView: View {
                 Text("Tracks")
             }
             Section() {
-                ForEach(playlists, id: \.id) { row in
-                    NavigationLink(value: row) {
-                        HomePlaylistCellView(playlistCellViewModel: row)
+                ForEach(0..<vm.playlistCount, id: \.self) { row in
+                    let cellViewModel = vm.getPlaylistCellViewModel(at: row)
+                    NavigationLink(value: cellViewModel) {
+                        HomePlaylistCellView(playlistCellViewModel: cellViewModel)
                     }
                 }
                 .listRowBackground(ShadowCellView())
