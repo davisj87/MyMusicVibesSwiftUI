@@ -20,16 +20,16 @@ import Foundation
     private var artists:[ArtistObject] = []
     private var playlists:[PlaylistObject] = []
     
-    var trackCount:Int {
-        return tracks.count
+    var trackRange:Range<Int> {
+        return tracks.indices
     }
     
-    var artistCount:Int {
-        return artists.count
+    var artistRange:Range<Int> {
+        return artists.indices
     }
     
-    var playlistCount:Int {
-        return playlists.count
+    var playlistRange:Range<Int> {
+        return playlists.indices
     }
     
     private let authManager = AuthManager()

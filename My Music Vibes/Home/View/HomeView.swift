@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         List() {
             Section() {
-                ForEach(0..<vm.artistCount, id: \.self) { row in
+                ForEach(vm.artistRange, id: \.self) { row in
                     let cellViewModel = vm.getArtistCellViewModel(at: row)
                     NavigationLink(value: cellViewModel) {
                         HomeArtistCellView(artistCellViewModel: cellViewModel)
@@ -25,7 +25,7 @@ struct HomeView: View {
                 Text("Artists")
             }
             Section() {
-                ForEach(0..<vm.trackCount, id: \.self) { row in
+                ForEach(vm.trackRange, id: \.self) { row in
                     let cellViewModel = vm.getTrackCellViewModel(at: row)
                     NavigationLink(value: cellViewModel) {
                         HomeTrackCellView(trackCellViewModel: cellViewModel)
@@ -37,7 +37,7 @@ struct HomeView: View {
                 Text("Tracks")
             }
             Section() {
-                ForEach(0..<vm.playlistCount, id: \.self) { row in
+                ForEach(vm.playlistRange, id: \.self) { row in
                     let cellViewModel = vm.getPlaylistCellViewModel(at: row)
                     NavigationLink(value: cellViewModel) {
                         HomePlaylistCellView(playlistCellViewModel: cellViewModel)
