@@ -14,7 +14,7 @@ struct CoreTabBarView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
-            SearchView()
+            SearchLoadingView()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass")
                 }

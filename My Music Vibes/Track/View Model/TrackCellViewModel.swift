@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct TrackOverviewCellViewModel: ItemOverviewCellViewModelProtocol {
+struct TrackOverviewCellViewModel: SearchOverviewCellViewModelProtocol {
+    var searchType: SearchType = .track
     var primaryText: String
     var secondaryText: String
     var additionalDetailText: String = ""

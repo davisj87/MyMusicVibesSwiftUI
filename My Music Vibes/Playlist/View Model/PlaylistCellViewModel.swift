@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct PlaylistOverviewCellViewModel: ItemOverviewCellViewModelProtocol {
+struct PlaylistOverviewCellViewModel: SearchOverviewCellViewModelProtocol {
+    var searchType: SearchType = .playlist
     var primaryText: String
     var secondaryText: String
     var additionalDetailText: String

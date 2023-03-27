@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArtistHeaderView: View {
-    let artistOverviewCellModel:ArtistOverviewCellViewModel
+    let artistOverviewCellModel:any ItemOverviewCellViewModelProtocol
     var body: some View {
         VStack {
             Text(artistOverviewCellModel.primaryText)

@@ -23,10 +23,10 @@ import Foundation
         return AlbumOverviewCellViewModel(albumObject: albums[index])
     }
     
-    let artist:ArtistOverviewCellViewModel
+    let artist:any ItemOverviewCellViewModelProtocol
     private let artistAlbumsFetcher:ArtistAlbumsFetcherProtocol
     
-    init(artist:ArtistOverviewCellViewModel, artistAlbumsFetcher:ArtistAlbumsFetcherProtocol = ArtistAlbumsFetcher()) {
+    init(artist:some ItemOverviewCellViewModelProtocol, artistAlbumsFetcher:ArtistAlbumsFetcherProtocol = ArtistAlbumsFetcher()) {
         self.artist = artist
         self.artistAlbumsFetcher = artistAlbumsFetcher
     }

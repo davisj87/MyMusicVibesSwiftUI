@@ -8,16 +8,40 @@
 import SwiftUI
 
 struct SearchView: View {
+    let vm: SearchViewModel
     var body: some View {
-        NavigationStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                .navigationTitle("Search")
+        List() {
+            ForEach(vm.searchViewModelCells, id: \.self) { row in
+               // let cellViewModel = vm.getArtistCellViewModel(at: row)
+                NavigationLink(value: row) {
+                    SearchCellView(cellViewModel: row)
+                }
+            }
+            .listRowBackground(ShadowCellView())
+            .listRowSeparator(.hidden)
         }
+        .navigationTitle("Search")
+        .navigationDestination(for: OverviewCellViewModel.self, destination: { overviewCellViewModel in
+            switch overviewCellViewModel.searchType {
+            case .all:
+                Text("all")
+            case .playlist:
+                Text("playlist")
+            case .artist:
+                ArtistLoadingView(vm: ArtistAlbumsViewModel(artist: overviewCellViewModel))
+            case .album:
+                Text("album")
+            case .track:
+                Text("track")
+            }
+           // ArtistLoadingView(vm: ArtistAlbumsViewModel(artist: artistCellViewModel))
+        })
+            
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

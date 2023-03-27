@@ -24,10 +24,10 @@ final class PlaylistTracksViewModel: TrackDetailViewFormatter {
         return TrackDetailTableViewCellViewModel(track: trackCellViewModel, trackDetail: nil)
     }
      
-    let playlist:ItemOverviewCellViewModelProtocol
+    let playlist:any ItemOverviewCellViewModelProtocol
     let playlistTracksFetcher:PlaylistTracksFetcherProtocol
     
-    init(playlist:ItemOverviewCellViewModelProtocol, playlistTracksFetcher:PlaylistTracksFetcherProtocol = PlaylistTracksFetcher()) {
+    init(playlist:any ItemOverviewCellViewModelProtocol, playlistTracksFetcher:PlaylistTracksFetcherProtocol = PlaylistTracksFetcher()) {
         self.playlist = playlist
         self.playlistTracksFetcher = playlistTracksFetcher
     }

@@ -9,12 +9,12 @@ import Foundation
 
 final class TrackDetailsCollectionViewModel: TrackDetailViewFormatter {
     private (set) var trackSectionViewModel:[TrackCollectionViewSectionViewModel] = []
-    private (set) var track:ItemOverviewCellViewModelProtocol
+    private (set) var track:TrackOverviewCellViewModel
     private var trackDetail:TrackFeaturesObject?
     
     private let trackDetailFetcher: TrackDetailFetcherProtcol
     
-    init(track:ItemOverviewCellViewModelProtocol,
+    init(track:TrackOverviewCellViewModel,
          trackDetail:TrackFeaturesObject? = nil,
          trackDetailFetcher:TrackDetailFetcherProtcol = TrackDetailFetcher()) {
         

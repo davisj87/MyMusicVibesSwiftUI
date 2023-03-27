@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct ArtistOverviewCellViewModel: ItemOverviewCellViewModelProtocol {
+struct ArtistOverviewCellViewModel: SearchOverviewCellViewModelProtocol {
+    var searchType: SearchType = .artist
     var primaryText: String
     var secondaryText: String
     var additionalDetailText: String = ""

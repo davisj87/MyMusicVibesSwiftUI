@@ -105,6 +105,8 @@
 		83BE9FED29CA19DD006180E9 /* ArtistLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE9FEC29CA19DD006180E9 /* ArtistLoadingView.swift */; };
 		83BE9FEF29CA1A21006180E9 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE9FEE29CA1A21006180E9 /* ViewModelState.swift */; };
 		83CC96FC29B8D7EC00D0D7D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CC96FB29B8D7EC00D0D7D2 /* HomeView.swift */; };
+		83FC7E0529D1D48300657EF9 /* SearchLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FC7E0429D1D48300657EF9 /* SearchLoadingView.swift */; };
+		83FC7E0729D1E86400657EF9 /* SearchCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FC7E0629D1E86400657EF9 /* SearchCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +228,8 @@
 		83BE9FEC29CA19DD006180E9 /* ArtistLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistLoadingView.swift; sourceTree = "<group>"; };
 		83BE9FEE29CA1A21006180E9 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
 		83CC96FB29B8D7EC00D0D7D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		83FC7E0429D1D48300657EF9 /* SearchLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLoadingView.swift; sourceTree = "<group>"; };
+		83FC7E0629D1E86400657EF9 /* SearchCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,7 +465,9 @@
 		83AE0CA629B78E6900CC4D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83FC7E0429D1D48300657EF9 /* SearchLoadingView.swift */,
 				839020B929C25A5B00C09EE2 /* SearchView.swift */,
+				83FC7E0629D1E86400657EF9 /* SearchCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1000,7 +1006,9 @@
 				83B6699C29BBA2CF00C8F86C /* TrackDetailCellView.swift in Sources */,
 				83AE0D0F29B7963100CC4D19 /* HomeFetcher.swift in Sources */,
 				83AE0D3B29B799BF00CC4D19 /* ArtistAlbumsEndpoint.swift in Sources */,
+				83FC7E0729D1E86400657EF9 /* SearchCellView.swift in Sources */,
 				83AE0CD429B790E300CC4D19 /* NetworkRequest.swift in Sources */,
+				83FC7E0529D1D48300657EF9 /* SearchLoadingView.swift in Sources */,
 				83AE0D2329B797ED00CC4D19 /* TopPlaylistsEndpoint.swift in Sources */,
 				83AE0D3329B7993100CC4D19 /* SearchArtistEndpoint.swift in Sources */,
 				83AE0D1129B7965300CC4D19 /* HomeViewModel.swift in Sources */,

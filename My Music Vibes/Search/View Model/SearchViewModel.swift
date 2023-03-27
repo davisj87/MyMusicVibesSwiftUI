@@ -7,7 +7,9 @@
 
 import Foundation
 
-final class SearchViewModel {
+@MainActor final class SearchViewModel: ObservableObject {
+    @Published var state: ViewModelState = .empty("Type in the search bar to get started")
+    
     private (set) var isSearching:Bool = false
     
     private (set) var currentSearchScope:SearchType = .all
@@ -21,11 +23,11 @@ final class SearchViewModel {
     }
     
     private var currentQuery:String = ""
-    private let searchFetcher:SearchFetcher
+    private let searchFetcher:SearchFetcherProtocol
     
-    private (set) var searchViewModelCells:[ItemOverviewCellViewModelProtocol] = []
+    private (set) var searchViewModelCells:[OverviewCellViewModel] = []
     
-    init(searchFetcher:SearchFetcher = SearchFetcher()) {
+    init(searchFetcher:some SearchFetcherProtocol = SearchFetcher()) {
         self.searchFetcher = searchFetcher
     }
     
@@ -34,29 +36,59 @@ final class SearchViewModel {
         defer { self.isSearching = false }
         
         guard !isSearching else { return }
+        self.searchViewModelCells = []
         guard let filter = SearchType(rawValue: type) else { return }
         self.currentSearchScope = filter
         self.currentQuery = query
         self.isSearching = true
+        state = .loading
+        
         switch filter {
         case .all:
-            self.searchViewModelCells = try await self.searchFetcher.getAll(query: query)
+            do {
+                self.searchViewModelCells = try await self.searchFetcher.getAll(query: query)
+                state = self.searchViewModelCells.isEmpty ? .empty("No Items Found") : .loaded
+            } catch {
+                state = .error("There was an error loading your data")
+            }
         case .album:
-            let albumData = try await self.searchFetcher.getAlbum(query: query, limit: 20, offset: 0)
-            self.searchViewModelCells = albumData.items
-            self.currentScopeTotal = albumData.scopeTotal
+            do {
+                let albumData = try await self.searchFetcher.getAlbum(query: query, limit: 20, offset: 0)
+                self.searchViewModelCells = albumData.items
+                self.currentScopeTotal = albumData.scopeTotal
+                state = self.searchViewModelCells.isEmpty ? .empty("No Albums Found") : .loaded
+            } catch {
+                state = .error("There was an error loading your data")
+            }
         case .artist:
-            let artistData = try await self.searchFetcher.getArtists(query: query, limit: 20, offset: 0)
-            self.searchViewModelCells = artistData.items
-            self.currentScopeTotal = artistData.scopeTotal
+            do {
+                let artistData = try await self.searchFetcher.getArtists(query: query, limit: 20, offset: 0)
+                self.searchViewModelCells = artistData.items
+                self.currentScopeTotal = artistData.scopeTotal
+                state = self.searchViewModelCells.isEmpty ? .empty("No Artists Found") : .loaded
+            } catch {
+                state = .error("There was an error loading your data")
+            }
+            
         case .playlist:
-            let playlistData = try await self.searchFetcher.getPlaylists(query: query, limit: 20, offset: 0)
-            self.searchViewModelCells = playlistData.items
-            self.currentScopeTotal = playlistData.scopeTotal
+            do {
+                let playlistData = try await self.searchFetcher.getPlaylists(query: query, limit: 20, offset: 0)
+                self.searchViewModelCells = playlistData.items
+                self.currentScopeTotal = playlistData.scopeTotal
+                state = self.searchViewModelCells.isEmpty ? .empty("No Playlists Found") : .loaded
+            } catch {
+                state = .error("There was an error loading your data")
+            }
         case .track:
-            let trackData = try await self.searchFetcher.getTracks(query: query, limit: 20, offset: 0)
-            self.searchViewModelCells = trackData.items
-            self.currentScopeTotal = trackData.scopeTotal
+            do {
+                let trackData = try await self.searchFetcher.getTracks(query: query, limit: 20, offset: 0)
+                self.searchViewModelCells = trackData.items
+                self.currentScopeTotal = trackData.scopeTotal
+                state = self.searchViewModelCells.isEmpty ? .empty("No Tracks Found") : .loaded
+            } catch {
+                state = .error("There was an error loading your data")
+            }
+
         }
     }
     
@@ -71,22 +103,17 @@ final class SearchViewModel {
         case .album:
             let additionalAlbumsData = try await self.searchFetcher.getAlbum(query: currentQuery, limit: 20, offset: self.currentScopeCountOffset)
             self.searchViewModelCells.append(contentsOf: additionalAlbumsData.items)
-          //  self.currentScopeTotal = additionalAlbumsData.scopeTotal
         case .artist:
             let additionalArtistsData = try await self.searchFetcher.getArtists(query: currentQuery, limit: 20, offset: self.currentScopeCountOffset)
             self.searchViewModelCells.append(contentsOf: additionalArtistsData.items)
-          //  self.currentScopeTotal = additionalArtistsData.scopeTotal
         case .playlist:
             let additionalPlaylistsData = try await self.searchFetcher.getPlaylists(query: currentQuery, limit: 20, offset: self.currentScopeCountOffset)
             self.searchViewModelCells.append(contentsOf: additionalPlaylistsData.items)
-          //  self.currentScopeTotal = additionalPlaylistsData.scopeTotal
         case .track:
             let additionalTracksData = try await self.searchFetcher.getTracks(query: currentQuery, limit: 20, offset: self.currentScopeCountOffset)
             self.searchViewModelCells.append(contentsOf: additionalTracksData.items)
-          //  self.currentScopeTotal = additionalTracksData.scopeTotal
      
         }
-        //self.isSearching = false
     }
     
     

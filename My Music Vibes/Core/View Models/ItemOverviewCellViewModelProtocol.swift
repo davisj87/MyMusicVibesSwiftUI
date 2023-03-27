@@ -11,7 +11,7 @@ import Foundation
 // TableViewCell and HeaderViews for Albums, Artists, Playlists, and Tracks should all use this protocol
 
 
-protocol ItemOverviewCellViewModelProtocol {
+protocol ItemOverviewCellViewModelProtocol:Hashable {
     var primaryText:String { get }
     var secondaryText:String { get }
     var additionalDetailText:String { get }
