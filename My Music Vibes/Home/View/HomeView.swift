@@ -58,7 +58,7 @@ struct HomeView: View {
            // TrackView()
         })
         .navigationDestination(for: PlaylistOverviewCellViewModel.self, destination: { playlistCellViewModel in
-            PlaylistView()
+            PlaylistLoadingView(vm: PlaylistTracksViewModel(playlist: playlistCellViewModel))
         })
     }
 }

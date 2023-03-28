@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct AlbumView: View {
-    @StateObject var vm: AlbumTracksViewModel
-    @State private var didAppear = false
+    let vm: AlbumTracksViewModel
     
     var body: some View {
         List() {
@@ -19,9 +18,10 @@ struct AlbumView: View {
                 .listRowSeparator(.hidden)
             }
             Section() {
-                ForEach(vm.trackDetailsCellViewModels, id: \.id) { row in
-                    NavigationLink(value: row) {
-                        AlbumTracksCellView(trackDetailCellViewModel: row)
+                ForEach(vm.trackRange, id: \.self) { row in
+                    let cellViewModel = vm.getTrackAndDetailsVM(at: row)
+                    NavigationLink(value: cellViewModel) {
+                        AlbumTracksCellView(trackDetailCellViewModel: cellViewModel)
                     }
                 }
                 .listRowBackground(ShadowCellView())
@@ -34,15 +34,6 @@ struct AlbumView: View {
 //        .navigationDestination(for: AlbumOverviewCellViewModel.self, destination: { albumOverviewCellViewModel in
 //            AlbumView(vm: AlbumTracksViewModel(album: albumOverviewCellViewModel))
 //        })
-        .onAppear(perform:firstLoad)
-    }
-    func firstLoad() {
-        if !didAppear {
-            didAppear = true
-            Task {
-                try await self.vm.getTracksData()
-            }
-        }
     }
 }
 

@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct PlaylistView: View {
+    let vm: PlaylistTracksViewModel
+    
     var body: some View {
-        Text("Playlist")
+        List() {
+            Section() {
+                PlaylistHeaderView(playlistOverviewCellModel: vm.playlist)
+                .listRowBackground(ShadowCellView())
+                .listRowSeparator(.hidden)
+            }
+            Section() {
+                ForEach(vm.trackRange, id: \.self) { row in
+                    let cellViewModel = vm.getTrackAndDetailsVM(at: row)
+                    NavigationLink(value: cellViewModel) {
+                        AlbumTracksCellView(trackDetailCellViewModel: cellViewModel)
+                    }
+                }
+                .listRowBackground(ShadowCellView())
+                .listRowSeparator(.hidden)
+            } header: {
+                Text("Tracks")
+            }
+        }
+        .navigationTitle("Playlist")
     }
 }
 
-struct PlaylistView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaylistView()
-    }
-}
+//struct PlaylistView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlaylistView()
+//    }
+//}

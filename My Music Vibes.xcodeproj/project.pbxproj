@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8316102729D35D8400BDCFD3 /* AlbumLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8316102629D35D8400BDCFD3 /* AlbumLoadingView.swift */; };
+		8316102929D362C700BDCFD3 /* PlaylistHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8316102829D362C700BDCFD3 /* PlaylistHeaderView.swift */; };
+		8316102B29D363B200BDCFD3 /* PlaylistLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8316102A29D363B200BDCFD3 /* PlaylistLoadingView.swift */; };
 		8336B39529C8CFC9001910D8 /* HomeLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336B39429C8CFC9001910D8 /* HomeLoadingView.swift */; };
 		8336B39729C8CFF0001910D8 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8336B39629C8CFF0001910D8 /* ErrorView.swift */; };
 		8366EA4C29C35484008B39DF /* ShadowCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366EA4B29C35484008B39DF /* ShadowCellView.swift */; };
@@ -127,6 +130,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8316102629D35D8400BDCFD3 /* AlbumLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLoadingView.swift; sourceTree = "<group>"; };
+		8316102829D362C700BDCFD3 /* PlaylistHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistHeaderView.swift; sourceTree = "<group>"; };
+		8316102A29D363B200BDCFD3 /* PlaylistLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistLoadingView.swift; sourceTree = "<group>"; };
 		8336B39429C8CFC9001910D8 /* HomeLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLoadingView.swift; sourceTree = "<group>"; };
 		8336B39629C8CFF0001910D8 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		8366EA4B29C35484008B39DF /* ShadowCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCellView.swift; sourceTree = "<group>"; };
@@ -514,7 +520,9 @@
 		83AE0CAB29B78EAC00CC4D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8316102A29D363B200BDCFD3 /* PlaylistLoadingView.swift */,
 				83B6699729BBA1C700C8F86C /* PlaylistView.swift */,
+				8316102829D362C700BDCFD3 /* PlaylistHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -561,6 +569,7 @@
 		83AE0CB029B78EDF00CC4D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8316102629D35D8400BDCFD3 /* AlbumLoadingView.swift */,
 				83A22A1D29C4F99600C9E70B /* AlbumView.swift */,
 				83A22A1F29C4FD2C00C9E70B /* AlbumHeaderView.swift */,
 				83A22A2129C4FE4900C9E70B /* AlbumTracksCellView.swift */,
@@ -1027,6 +1036,7 @@
 				83AE0D1529B7968900CC4D19 /* ItemOverviewCellViewModelProtocol.swift in Sources */,
 				83AE0D2529B7981E00CC4D19 /* TracksArrayEndpoint.swift in Sources */,
 				83AE0D2929B7985100CC4D19 /* SingleTrackDetailEndpoint.swift in Sources */,
+				8316102729D35D8400BDCFD3 /* AlbumLoadingView.swift in Sources */,
 				839020BA29C25A5B00C09EE2 /* SearchView.swift in Sources */,
 				83B669A029BBCEFF00C8F86C /* HomeArtistCellView.swift in Sources */,
 				83AE0D3529B7994B00CC4D19 /* SearchPlaylistEndpoint.swift in Sources */,
@@ -1040,6 +1050,7 @@
 				83AE0D0429B7958200CC4D19 /* SearchAllWrapper.swift in Sources */,
 				83AE0D3729B7995C00CC4D19 /* SearchTrackEndpoint.swift in Sources */,
 				83AE0D0B29B795CE00CC4D19 /* PlaylistListWrapper.swift in Sources */,
+				8316102B29D363B200BDCFD3 /* PlaylistLoadingView.swift in Sources */,
 				83AE0CFE29B7952B00CC4D19 /* PlaylistObject.swift in Sources */,
 				83AE0D3129B7991C00CC4D19 /* SearchAlbumEndpoint.swift in Sources */,
 				83AE0CF129B7943100CC4D19 /* TracksObject.swift in Sources */,
@@ -1059,6 +1070,7 @@
 				83AE0D1F29B797C300CC4D19 /* TopArtistsEndpoint.swift in Sources */,
 				83AE0CDB29B7915C00CC4D19 /* TokenPostEndpoint.swift in Sources */,
 				83A22A1A29C4E6A400C9E70B /* ArtistAlbumsCellView.swift in Sources */,
+				8316102929D362C700BDCFD3 /* PlaylistHeaderView.swift in Sources */,
 				83AE0CD229B790BD00CC4D19 /* RequestError.swift in Sources */,
 				83AE0D4B29B79B2700CC4D19 /* PlaylistTracksViewModel.swift in Sources */,
 				83AE0D0D29B795E300CC4D19 /* AlbumListWrapper.swift in Sources */,

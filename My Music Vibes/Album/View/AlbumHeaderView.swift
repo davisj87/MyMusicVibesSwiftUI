@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AlbumHeaderView: View {
-    let albumOverviewCellModel:AlbumOverviewCellViewModel
+    let albumOverviewCellModel:any ItemOverviewCellViewModelProtocol
     var body: some View {
         VStack {
             Text(albumOverviewCellModel.primaryText)

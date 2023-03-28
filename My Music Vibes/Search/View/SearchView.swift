@@ -23,16 +23,16 @@ struct SearchView: View {
         .navigationTitle("Search")
         .navigationDestination(for: OverviewCellViewModel.self, destination: { overviewCellViewModel in
             switch overviewCellViewModel.searchType {
-            case .all:
-                Text("all")
             case .playlist:
-                Text("playlist")
+                PlaylistLoadingView(vm: PlaylistTracksViewModel(playlist: overviewCellViewModel))
             case .artist:
                 ArtistLoadingView(vm: ArtistAlbumsViewModel(artist: overviewCellViewModel))
             case .album:
-                Text("album")
+                AlbumLoadingView(vm: AlbumTracksViewModel(album: overviewCellViewModel))
             case .track:
                 Text("track")
+            default:
+                Text("Error")
             }
            // ArtistLoadingView(vm: ArtistAlbumsViewModel(artist: artistCellViewModel))
         })

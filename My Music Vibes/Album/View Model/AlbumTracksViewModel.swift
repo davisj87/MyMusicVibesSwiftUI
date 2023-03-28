@@ -10,31 +10,61 @@ import Foundation
 @MainActor final class AlbumTracksViewModel: ObservableObject {
     private (set) var tracks:[TracksObject] = []
     private (set) var trackDetails = Set<TrackFeaturesObject?>()
-    @Published private (set) var trackDetailsCellViewModels:[TrackDetailTableViewCellViewModel] = []
+    
+    
+    @Published var state: ViewModelState = .loading
+    
+   // private var trackDetailsCellViewModels:[TrackDetailTableViewCellViewModel] = []
+    
+    var trackRange:Range<Int>  {
+        return tracks.indices
+    }
+    
+    func getTrackAndDetailsVM(at index:Int) -> TrackDetailTableViewCellViewModel {
+        let track = tracks[index]
+        let trackCellViewModel = TrackOverviewCellViewModel(tracksObject: track)
+        if let detailIndex = trackDetails.firstIndex(of: TrackFeaturesObject(withId: track.id)) {
+            return TrackDetailTableViewCellViewModel(track: trackCellViewModel, trackDetail: trackDetails[detailIndex])
+        }
+        return TrackDetailTableViewCellViewModel(track: trackCellViewModel, trackDetail: nil)
+    }
     
     private let albumTracksFetcher:AlbumTracksFetcherProtocol
-    let album:AlbumOverviewCellViewModel
+    let album:any ItemOverviewCellViewModelProtocol
     
-    init(album:AlbumOverviewCellViewModel, albumTracksFetcher:AlbumTracksFetcherProtocol = AlbumTracksFetcher()) {
+    init(album:some ItemOverviewCellViewModelProtocol, albumTracksFetcher:AlbumTracksFetcherProtocol = AlbumTracksFetcher()) {
         self.album = album
         self.albumTracksFetcher = albumTracksFetcher
     }
     
-    func getTracksData() async throws {
-        let trackIdsString = try await self.albumTracksFetcher.getAlbumTracksIds(albumId: self.album.id)
-        async let trackArr = self.albumTracksFetcher.getTracks(ids: trackIdsString)
-        async let trackDetailsArr = self.albumTracksFetcher.getTracksDetails(ids: trackIdsString)
-        let result = try await TrackAndDetailsResponse(tracks: trackArr, trackDetails: trackDetailsArr)
-        self.tracks = result.tracks
-        self.trackDetails = result.trackDetails
-        
-        self.trackDetailsCellViewModels = result.tracks.map { eachTrack in
-            let trackCellViewModel = TrackOverviewCellViewModel(tracksObject: eachTrack)
-            if let trackDetailIndex = result.trackDetails.firstIndex(of: TrackFeaturesObject(withId: eachTrack.id)) {
-                return TrackDetailTableViewCellViewModel(track: trackCellViewModel, trackDetail: result.trackDetails[trackDetailIndex])
+    func getTracks() async throws {
+        self.tracks = []
+        self.trackDetails = []
+        do {
+            let trackIdsString = try await self.albumTracksFetcher.getAlbumTracksIds(albumId: self.album.id)
+            async let trackArr = self.albumTracksFetcher.getTracks(ids: trackIdsString)
+            async let trackDetailsArr = self.albumTracksFetcher.getTracksDetails(ids: trackIdsString)
+            let result = try await TrackAndDetailsResponse(tracks: trackArr, trackDetails: trackDetailsArr)
+            self.tracks = result.tracks
+            self.trackDetails = result.trackDetails
+            
+            if tracks.isEmpty {
+                state = .empty("This album has no tracks.")
+            } else {
+                state = .loaded
             }
-            return TrackDetailTableViewCellViewModel(track: trackCellViewModel, trackDetail: nil)
+            
+        } catch {
+            state = .error("There was an error loading your data")
         }
+        
+//        self.trackDetailsCellViewModels = result.tracks.map { eachTrack in
+//            let trackCellViewModel = TrackOverviewCellViewModel(tracksObject: eachTrack)
+//            if let trackDetailIndex = result.trackDetails.firstIndex(of: TrackFeaturesObject(withId: eachTrack.id)) {
+//                return TrackDetailTableViewCellViewModel(track: trackCellViewModel, trackDetail: result.trackDetails[trackDetailIndex])
+//            }
+//            return TrackDetailTableViewCellViewModel(track: trackCellViewModel, trackDetail: nil)
+//        }
     }
 }
 
