@@ -664,7 +664,6 @@
 		83AE0CBA29B78F4600CC4D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				83B6699B29BBA2CF00C8F86C /* TrackDetailCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -843,6 +842,7 @@
 		83AE0CF629B7947E00CC4D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83B6699B29BBA2CF00C8F86C /* TrackDetailCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

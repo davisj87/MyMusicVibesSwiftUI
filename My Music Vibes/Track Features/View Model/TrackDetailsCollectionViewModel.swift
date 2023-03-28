@@ -7,14 +7,16 @@
 
 import Foundation
 
-final class TrackDetailsCollectionViewModel: TrackDetailViewFormatter {
+@MainActor final class TrackDetailsCollectionViewModel: ObservableObject, TrackDetailViewFormatter {
     private (set) var trackSectionViewModel:[TrackCollectionViewSectionViewModel] = []
-    private (set) var track:TrackOverviewCellViewModel
+    private (set) var track: any ItemOverviewCellViewModelProtocol//TrackOverviewCellViewModel
     private var trackDetail:TrackFeaturesObject?
+    
+    @Published var state: ViewModelState = .loading
     
     private let trackDetailFetcher: TrackDetailFetcherProtcol
     
-    init(track:TrackOverviewCellViewModel,
+    init(track:some ItemOverviewCellViewModelProtocol,
          trackDetail:TrackFeaturesObject? = nil,
          trackDetailFetcher:TrackDetailFetcherProtcol = TrackDetailFetcher()) {
         
@@ -28,9 +30,19 @@ final class TrackDetailsCollectionViewModel: TrackDetailViewFormatter {
         if let trackDetail = self.trackDetail {
             print("used preloaded track details")
             self.trackSectionViewModel = self.setupCollectionViewModel(trackDetails: trackDetail)
+            state = .loaded
         } else {
-            guard let trackDetailData = try await self.trackDetailFetcher.getTrackDetails(trackId: self.track.id) else { return }
-            self.trackSectionViewModel = self.setupCollectionViewModel(trackDetails: trackDetailData)
+            do {
+                if let trackDetailData = try await self.trackDetailFetcher.getTrackDetails(trackId: self.track.id) {
+                    self.trackSectionViewModel = self.setupCollectionViewModel(trackDetails: trackDetailData)
+                    
+                    state = .loaded
+                } else {
+                    state = .empty("This track has no other information.")
+                }
+            } catch {
+                state = .error("There was an error loading your data")
+            }
         }
     }
     
