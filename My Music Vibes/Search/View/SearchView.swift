@@ -12,7 +12,6 @@ struct SearchView: View {
     var body: some View {
         List() {
             ForEach(vm.searchViewModelCells, id: \.self) { row in
-               // let cellViewModel = vm.getArtistCellViewModel(at: row)
                 NavigationLink(value: row) {
                     SearchCellView(cellViewModel: row)
                 }
@@ -30,11 +29,10 @@ struct SearchView: View {
             case .album:
                 AlbumLoadingView(vm: AlbumTracksViewModel(album: overviewCellViewModel))
             case .track:
-                Text("track")
+                TrackDetailLoadingView(vm: TrackDetailsCollectionViewModel(track: overviewCellViewModel))
             default:
                 Text("Error")
             }
-           // ArtistLoadingView(vm: ArtistAlbumsViewModel(artist: artistCellViewModel))
         })
             
     }

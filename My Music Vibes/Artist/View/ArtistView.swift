@@ -32,7 +32,7 @@ struct ArtistView: View {
         }
         .navigationTitle("Artist")
         .navigationDestination(for: AlbumOverviewCellViewModel.self, destination: { albumOverviewCellViewModel in
-            AlbumView(vm: AlbumTracksViewModel(album: albumOverviewCellViewModel))
+            AlbumLoadingView(vm: AlbumTracksViewModel(album: albumOverviewCellViewModel))
         })
     }
 }

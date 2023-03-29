@@ -31,6 +31,13 @@ struct PlaylistView: View {
             }
         }
         .navigationTitle("Playlist")
+        .navigationDestination(for: TrackDetailTableViewCellViewModel.self, destination: { trackDetailCellViewModel in
+            if let cTrackOverviewModel = trackDetailCellViewModel.track {
+                TrackDetailLoadingView(vm: TrackDetailsCollectionViewModel(track: cTrackOverviewModel, trackDetail:trackDetailCellViewModel.trackDetail))
+            } else {
+                Text("The data for this track is not available")
+            }
+        })
     }
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct TrackDetailView: View {
     let vm: TrackDetailsCollectionViewModel
-    private let layout = [GridItem(.adaptive(minimum: 150), spacing: 2)]
+    private let twoColumnGrid = [GridItem(.flexible(minimum: 160)), GridItem(.flexible(minimum: 160))]
     
     
     var body: some View {
@@ -23,10 +23,9 @@ struct TrackDetailView: View {
             }
             ForEach(vm.trackSectionViewModel) { section in
                 Section() {
-                    LazyVGrid(columns: layout, spacing: 10) {
+                    LazyVGrid(columns: twoColumnGrid, spacing: 10) {
                         ForEach(section.attributes) { attribute in
                             TrackDetailAttributeView(trackAttribute: attribute)
-                            .padding()
                         }
                     }
                     .listRowBackground(EmptyView())

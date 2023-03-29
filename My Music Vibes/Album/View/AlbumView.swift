@@ -31,9 +31,13 @@ struct AlbumView: View {
             }
         }
         .navigationTitle("Album")
-//        .navigationDestination(for: AlbumOverviewCellViewModel.self, destination: { albumOverviewCellViewModel in
-//            AlbumView(vm: AlbumTracksViewModel(album: albumOverviewCellViewModel))
-//        })
+        .navigationDestination(for: TrackDetailTableViewCellViewModel.self, destination: { trackDetailCellViewModel in
+            if let cTrackOverviewModel = trackDetailCellViewModel.track {
+                TrackDetailLoadingView(vm: TrackDetailsCollectionViewModel(track: cTrackOverviewModel, trackDetail:trackDetailCellViewModel.trackDetail))
+            } else {
+                Text("The data for this track is not available")
+            }
+        })
     }
 }
 

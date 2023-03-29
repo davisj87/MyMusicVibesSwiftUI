@@ -17,12 +17,15 @@ struct TrackDetailAttributeView: View {
                 Text(trackAttribute.name)
                     .font(.caption)
                     .frame(maxWidth: .infinity, alignment: .center)
+                Spacer()
                 Text(trackAttribute.value)
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .center)
             }
             .padding(20)
+            .padding(.vertical, 20)
         }
+        
     }
 }
 
