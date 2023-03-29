@@ -55,7 +55,7 @@ struct HomeView: View {
             ArtistLoadingView(vm: ArtistAlbumsViewModel(artist: artistCellViewModel))
         })
         .navigationDestination(for: TrackOverviewCellViewModel.self, destination: { trackCellViewModel in
-           // TrackView()
+            TrackDetailLoadingView(vm: TrackDetailsCollectionViewModel(track: trackCellViewModel))
         })
         .navigationDestination(for: PlaylistOverviewCellViewModel.self, destination: { playlistCellViewModel in
             PlaylistLoadingView(vm: PlaylistTracksViewModel(playlist: playlistCellViewModel))

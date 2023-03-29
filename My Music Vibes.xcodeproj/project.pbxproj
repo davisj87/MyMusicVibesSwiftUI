@@ -20,6 +20,10 @@
 		83A22A1E29C4F99600C9E70B /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A22A1D29C4F99600C9E70B /* AlbumView.swift */; };
 		83A22A2029C4FD2C00C9E70B /* AlbumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A22A1F29C4FD2C00C9E70B /* AlbumHeaderView.swift */; };
 		83A22A2229C4FE4900C9E70B /* AlbumTracksCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A22A2129C4FE4900C9E70B /* AlbumTracksCellView.swift */; };
+		83A7932029D4709D0034294F /* TrackDetailLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7931F29D4709D0034294F /* TrackDetailLoadingView.swift */; };
+		83A7932229D470D90034294F /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7932129D470D90034294F /* TrackDetailView.swift */; };
+		83A7932429D472810034294F /* TrackHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7932329D472810034294F /* TrackHeaderView.swift */; };
+		83A7932629D4842E0034294F /* TrackDetailAttributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A7932529D4842E0034294F /* TrackDetailAttributeView.swift */; };
 		83AE0C6F29B78D5A00CC4D19 /* My_Music_VibesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE0C6E29B78D5A00CC4D19 /* My_Music_VibesApp.swift */; };
 		83AE0C7129B78D5A00CC4D19 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AE0C7029B78D5A00CC4D19 /* WelcomeView.swift */; };
 		83AE0C7329B78D5B00CC4D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83AE0C7229B78D5B00CC4D19 /* Assets.xcassets */; };
@@ -143,6 +147,10 @@
 		83A22A1D29C4F99600C9E70B /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		83A22A1F29C4FD2C00C9E70B /* AlbumHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHeaderView.swift; sourceTree = "<group>"; };
 		83A22A2129C4FE4900C9E70B /* AlbumTracksCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTracksCellView.swift; sourceTree = "<group>"; };
+		83A7931F29D4709D0034294F /* TrackDetailLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailLoadingView.swift; sourceTree = "<group>"; };
+		83A7932129D470D90034294F /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
+		83A7932329D472810034294F /* TrackHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackHeaderView.swift; sourceTree = "<group>"; };
+		83A7932529D4842E0034294F /* TrackDetailAttributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailAttributeView.swift; sourceTree = "<group>"; };
 		83AE0C6B29B78D5A00CC4D19 /* My Music Vibes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Music Vibes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AE0C6E29B78D5A00CC4D19 /* My_Music_VibesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Music_VibesApp.swift; sourceTree = "<group>"; };
 		83AE0C7029B78D5A00CC4D19 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
@@ -842,6 +850,10 @@
 		83AE0CF629B7947E00CC4D19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83A7931F29D4709D0034294F /* TrackDetailLoadingView.swift */,
+				83A7932129D470D90034294F /* TrackDetailView.swift */,
+				83A7932529D4842E0034294F /* TrackDetailAttributeView.swift */,
+				83A7932329D472810034294F /* TrackHeaderView.swift */,
 				83B6699B29BBA2CF00C8F86C /* TrackDetailCellView.swift */,
 			);
 			path = View;
@@ -989,6 +1001,7 @@
 				83AE0D0829B795B100CC4D19 /* ArtistListWrapper.swift in Sources */,
 				83B6699A29BBA2B200C8F86C /* ArtistView.swift in Sources */,
 				83AE0CCB29B7904400CC4D19 /* UIColor+Extension.swift in Sources */,
+				83A7932629D4842E0034294F /* TrackDetailAttributeView.swift in Sources */,
 				83AE0C7129B78D5A00CC4D19 /* WelcomeView.swift in Sources */,
 				83AE0C6F29B78D5A00CC4D19 /* My_Music_VibesApp.swift in Sources */,
 				83AE0CF829B7949100CC4D19 /* TrackFeaturesObject.swift in Sources */,
@@ -1033,12 +1046,14 @@
 				83AE0D1B29B7974B00CC4D19 /* TrackCellViewModel.swift in Sources */,
 				83AE0D1D29B7976800CC4D19 /* TrackDetailTableViewCellViewModel.swift in Sources */,
 				8366EA4C29C35484008B39DF /* ShadowCellView.swift in Sources */,
+				83A7932029D4709D0034294F /* TrackDetailLoadingView.swift in Sources */,
 				83AE0D1529B7968900CC4D19 /* ItemOverviewCellViewModelProtocol.swift in Sources */,
 				83AE0D2529B7981E00CC4D19 /* TracksArrayEndpoint.swift in Sources */,
 				83AE0D2929B7985100CC4D19 /* SingleTrackDetailEndpoint.swift in Sources */,
 				8316102729D35D8400BDCFD3 /* AlbumLoadingView.swift in Sources */,
 				839020BA29C25A5B00C09EE2 /* SearchView.swift in Sources */,
 				83B669A029BBCEFF00C8F86C /* HomeArtistCellView.swift in Sources */,
+				83A7932229D470D90034294F /* TrackDetailView.swift in Sources */,
 				83AE0D3529B7994B00CC4D19 /* SearchPlaylistEndpoint.swift in Sources */,
 				83A22A2029C4FD2C00C9E70B /* AlbumHeaderView.swift in Sources */,
 				83AE0CC529B78FF300CC4D19 /* ImageLoader.swift in Sources */,
@@ -1069,6 +1084,7 @@
 				83AE0D2B29B798B800CC4D19 /* PlaylistTracksEndpoint.swift in Sources */,
 				83AE0D1F29B797C300CC4D19 /* TopArtistsEndpoint.swift in Sources */,
 				83AE0CDB29B7915C00CC4D19 /* TokenPostEndpoint.swift in Sources */,
+				83A7932429D472810034294F /* TrackHeaderView.swift in Sources */,
 				83A22A1A29C4E6A400C9E70B /* ArtistAlbumsCellView.swift in Sources */,
 				8316102929D362C700BDCFD3 /* PlaylistHeaderView.swift in Sources */,
 				83AE0CD229B790BD00CC4D19 /* RequestError.swift in Sources */,

@@ -80,14 +80,16 @@ import Foundation
     
 }
 
-struct TrackCollectionViewSectionViewModel {
+struct TrackCollectionViewSectionViewModel:Identifiable {
     var title: String
     var attributes: [TrackCollectionViewCellViewModel]
+    let id = UUID()
 }
 
-struct TrackCollectionViewCellViewModel {
+struct TrackCollectionViewCellViewModel:Identifiable {
     var name: String
     var value: String
+    let id = UUID()
 }
 
 
